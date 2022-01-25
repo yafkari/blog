@@ -28,10 +28,10 @@
 <script>
 	import { marked } from 'marked';
 	import hljs from 'highlight.js';
-  import { reformatArticle } from '../utils/Utils';
+  import { reformatArticle } from '../../utils/Utils';
 
-	import SocialBar from '../components/SocialBar.svelte';
-	import Comments from '../components/Comments.svelte';
+	import SocialBar from '../../components/SocialBar.svelte';
+	import Comments from '../../components/Comments.svelte';
 
 	const renderer = new marked.Renderer();
 	renderer.heading = (text, level) => {
