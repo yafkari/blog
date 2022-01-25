@@ -1,6 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/397aa103-f84f-4954-950b-c79c81fcea1d/deploy-status)](https://app.netlify.com/sites/sleepy-colden-6ddb2b/deploys)
 [![MIT License][license-badge]](LICENSE)
 
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+
 # Younes Afkari - Personal Blog
 
 In this repository I will build my personal blog with SvelteKit while learning it. 
