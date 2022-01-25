@@ -6,8 +6,9 @@
 # Younes Afkari - Personal Blog
 
 In this repository I will build my personal blog with SvelteKit while learning it. 
-
 (I already have some experience with Svelte but never used SvelteKit).
+
+Good to mention that the articles are fetched from my profile on [DEV](https://dev.to/yafkari). At some point, I will probably host them myself, we'll see..
 
 
 ## Live Demo
