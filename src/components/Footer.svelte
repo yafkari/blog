@@ -72,7 +72,7 @@
           href="https://linkedin.com/in/younes-afkari" target="_blank" rel="noopener noreferrer">@yafkari</a></b>.
       </div>
       <ul>
-        <a href="links">Links</a>
+        <a href="/links">Links</a>
       </ul>
     </div>
   </div>

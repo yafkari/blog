@@ -1,64 +1,56 @@
 <style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
+  ul {
+    margin: 0 0 1em 0;
+    line-height: 1.5;
+    padding-left: 30px;
+  }
+
+  li {
+    margin: 0 0 1.2em 0;
+    list-style: none;
+  }
+
+  @media (max-width: 640px) {
+    ul {
+      padding: 0;
+    }
   }
 
   h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 340px;
-    margin: 0 0 1em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
+    margin-bottom: 1.5em;
   }
 </style>
 
-<svelte:head>
-  <title>Younes Afkari - Home</title>
-  <meta
-    property="og:title"
-    content="Younes Afkari Blog - Coding, Entrepreneurship" />
-  <meta
-    property="og:description"
-    content="Blog of Younes Afkari. I write articles about tech, code,
-    and much more ! Join us ! I am a fullstack developer that mainly uses reactjs, nodejs and flutter, ..." />
-  <meta name="twitter:image" content="/favicon.png" />
-</svelte:head>
+<script context="module" lang="ts">
+  /** @type {import('@sveltejs/kit').Load} */
+	export async function load({ fetch }) {
+		const res = await fetch('https://dev.to/api/articles?username=yafkari');
 
-<h1>Welcome !</h1>
+		if (res.ok) {
+			return {
+				props: {
+					posts: await res.json()
+				}
+			};
+		}
 
-<figure>
-  <img alt="bob ross painting work in progress" src="wip.jpg" />
-  <figcaption>
-    You can access my portfolio <strong><a href="/blog">here</a></strong>,
-    <br />
-    You can also read my last posts <strong><a href="/blog">here</a></strong>!
-  </figcaption>
-</figure>
+		return {
+			status: res.status,
+			error: new Error(`Could not load articles`)
+		};
+	}
+</script>
 
-<p>
-  <strong>
-    Don't forget to follow me on Twitter & DEV!
-  </strong>
-</p>
+<script>
+  import Post from "../components/Post.svelte";
+	export let posts;
+</script>
+
+<h1>Recent posts</h1>
+<ul>
+  {#each posts as post}
+    <li>
+      <Post {post} />
+    </li>
+  {/each}
+</ul>

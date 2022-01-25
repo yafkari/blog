@@ -74,16 +74,7 @@
 <nav>
   <ul>
     <li>
-      <a class:selected={$page.url.pathname==='/'} href="/" class="routes">Home</a>
-    </li>
-    <li>
-      <a
-        sveltekit:prefetch
-        class:selected={$page.url.pathname.startsWith('/blog')}
-        href="/blog"
-        class="routes">
-        Articles
-      </a>
+      <a sveltekit:prefetch class:selected={$page.url.pathname==='/' || $page.url.pathname.startsWith('/blog')} href="/" class="routes">Home</a>
     </li>
     <li>
       <a class:selected={$page.url.pathname==='/about'} href="/about" class="routes">
