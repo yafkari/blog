@@ -65,6 +65,7 @@
 	<meta property="article:published_time" content={post.published_at} />
 	<meta property="article:modified_time" content={post.edited_at} />
 	<meta property="og:locale" content="en_US" />
+  <link rel="stylesheet" href="/highlights.js.min.css">
 	{#each post.tag_list.split(",") as tag}
 		<meta property="article:tag" content={tag.trim()} />
 	{/each}

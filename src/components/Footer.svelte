@@ -43,7 +43,12 @@
     padding-left: 10%;
   }
 
-  footer ul a {
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  footer ul li a {
     line-height: 1.5;
     -webkit-box-direction: normal;
     text-align: left;
@@ -58,7 +63,7 @@
     margin-right: 1rem;
   }
 
-  footer ul a:hover {
+  footer ul li a:hover {
     color: #fff;
   }
 </style>
@@ -72,7 +77,7 @@
           href="https://linkedin.com/in/younes-afkari" target="_blank" rel="noopener noreferrer">@yafkari</a></b>.
       </div>
       <ul>
-        <a href="/links">Links</a>
+        <li><a href="/links">Links</a></li>
       </ul>
     </div>
   </div>
