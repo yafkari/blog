@@ -71,7 +71,7 @@
 </svelte:head>
 
 <h1>{post.title}</h1>
-<img class="image" src={post.cover_image} alt="Main image" />
+<img class="image" src={post.cover_image} alt="Coer illustration" />
 
 <div class="content">
 	{@html marked(post.body_markdown)}
