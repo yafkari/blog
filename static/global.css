@@ -20,7 +20,7 @@ h1 {
 }
 
 a {
-	color: inherit;
+	color: #333 !important;
 }
 
 code {

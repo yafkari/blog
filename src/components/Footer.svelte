@@ -58,9 +58,13 @@
     transition-duration: 0.25s;
     background-color: rgba(0, 0, 0, 0);
     text-decoration: inherit;
-    color: #c05621;
+    color: #c05621 !important;
     font-weight: 400;
     margin-right: 1rem;
+  }
+
+  a {
+    color: white !important;
   }
 
   footer ul li a:hover {

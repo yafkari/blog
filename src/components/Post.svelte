@@ -1,62 +1,116 @@
 <style>
-  h2 {
-    font-weight: bold;
-  }
+	.blog-title {
+		width: 100%;
+		padding-bottom: 40px;
+		border-bottom: 1px solid lightgrey;
+	}
 
-  a {
-    text-decoration: underline;
-    text-underline-position: under;
-  }
+	.top-post {
+		width: 100%;
+		padding-top: 25px;
+		display: flex;
+	}
 
-  a:hover {
-    color: #6b6b6b;
-  }
+	.top-post > img {
+		width: 65%;
+	}
 
-  a:visited {
-    color: #683696;
-  }
+	.post-details {
+		width: 100%;
+    padding-top: .5em;
+    padding-bottom: 3em;
+	}
 
-  .card {
-    padding: 1em;
-    margin-bottom: 10px;
-    border: 2px solid #bababa;
-    box-shadow: 3px 3px 0px #bababa;
-  }
-  .tags {
-    margin: 10px 0;
-  }
+	.post-details > h3 {
+		font-weight: 600;
+		margin: 10px 0;
+		font-size: 1.3rem;
+	}
+
+	.post-details > h6 {
+		font-size: 0.9rem;
+		font-weight: 600;
+    
+	}
+
+	.top-post-details {
+		width: 35%;
+		margin-top: 30px;
+		margin-left: 45px;
+	}
+
+	.top-post-details > h3 {
+		font-size: 1.6rem;
+	}
+
+	.other-posts {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 35px;
+	}
+
+	.other-post {
+		/* width: 30%; */
+		height: 100%;
+	}
+
+	.other-post > img {
+		width: 100%;
+	}
+
+	.bio {
+		display: flex;
+	}
+
+	.bio > img {
+		width: 40px;
+		border-radius: 100%;
+		margin-right: 10px;
+	}
+	.taglist {
+		list-style-type: none;
+		padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+	}
   .tag {
+    margin-right: .5em;
+    margin-bottom: .5em;
     border-radius: 100px;
     background-color: #eaeaea;
     padding: 2px 8px;
-    margin-right: 10px;
-    margin-top: 5px;
     display: inline-block;
   }
+  .post-details > h5 {
+    padding-top: 0.5em;
+  }
 
-  @media (max-width: 640px) {
-    .tag {
-      margin-right: 5px;
-      font-size: 0.8rem;
-    }
+  .other-post a img {
+    max-width: -webkit-fill-available;
   }
 </style>
 
 <script>
-  export let post;
+	export let post;
 </script>
 
-<div class="card">
-  {new Date(post.published_at).toDateString()}
-  <a sveltekit:prefetch href="blog/{post.slug}">
-    <h2>{post.title}</h2>
-  </a>
-
-  <div class="tags">
-    {#each post.tag_list as tag}
-      <span class="tag">{tag}</span>
-    {/each}
-  </div>
-
-  <p>{post.description}</p>
+<div class="other-post">
+	<a sveltekit:prefetch href="blog/{post.slug}"><img src={post.social_image} alt="illustration" /></a>
+	<div class="post-details">
+		<a sveltekit:prefetch href="blog/{post.slug}">
+			<h3>{post.title}</h3>
+		</a>
+		<h5>{post.description}</h5>
+		<div class="bio">
+			<div>
+				<p>{new Date(post.published_at).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' })} - {post.reading_time_minutes} Min Read</p>
+				<ul class="taglist">
+					{#each post.tag_list as tag}
+						<li class="tag">{tag}</li>
+					{/each}
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>

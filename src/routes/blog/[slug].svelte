@@ -56,12 +56,12 @@
 	<meta name="twitter:url" content="https://blog.yafkari.dev/blog/{post.slug}" />
 	<meta name="twitter:title" content={post.title} />
 	<meta name="twitter:description" content={post.description} />
-	<meta name="twitter:image" content={post.cover_image} />
+	<meta name="twitter:image" content={post.social_image} />
 	<meta property="og:url" content="https://blog.yafkari.dev/blog/{post.slug}" />
 	<meta property="og:title" content={post.title} />
 	<meta name="og:description" content={post.description} />
 	<meta property="og:type" content="article" />
-	<meta property="og:image" content={post.cover_image} />
+	<meta property="og:image" content={post.social_image} />
 	<meta property="article:published_time" content={post.published_at} />
 	<meta property="article:modified_time" content={post.edited_at} />
 	<meta property="og:locale" content="en_US" />
@@ -72,7 +72,7 @@
 </svelte:head>
 
 <h1>{post.title}</h1>
-<img class="image" src={post.cover_image} alt="Coer illustration" />
+<img class="image" src={post.social_image} alt="Coer illustration" />
 
 <div class="content">
 	{@html marked(post.body_markdown)}
