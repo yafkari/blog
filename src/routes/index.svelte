@@ -162,6 +162,7 @@
 </script>
 
 <svelte:head>
+  <meta name="description" content="Younes Afkari Blog" />
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 		rel="stylesheet"
