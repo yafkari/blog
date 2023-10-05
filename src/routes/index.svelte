@@ -135,7 +135,7 @@
 <script context="module" lang="ts">
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ fetch }) {
-		const res = await fetch('https://dev.to/api/articles?username=yafkari');
+		const res = await fetch('https://dev.to/api/articles?username=yoadev');
 
 		if (res.ok) {
 			let posts = await res.json();
