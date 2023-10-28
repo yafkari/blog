@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	/** @type {import('@sveltejs/kit').Load} **/
 	export async function load({ params, fetch }) {
-		const url = `https://dev.to/api/articles/yafkari/${params.slug}`;
+		const url = `https://dev.to/api/articles/yoadev/${params.slug}`;
 		const res = await fetch(url);
 		
 
