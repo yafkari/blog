@@ -19,8 +19,7 @@ const render = (pages, posts) => `<?xml version="1.0" encoding="UTF-8" ?>
     <url><loc>${BASE_URL}/${page}</loc><priority>0.85</priority></url>
   `
     )
-    .join("
-")}
+    .join("")}
   ${posts
     .map(
       post => `
@@ -30,8 +29,7 @@ const render = (pages, posts) => `<?xml version="1.0" encoding="UTF-8" ?>
     </url>
   `
     )
-    .join("
-")}
+    .join("")}
 </urlset>
 `;
 
